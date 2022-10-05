@@ -1,0 +1,20 @@
+<h1>Welcome to My Blog</h1>
+
+<%= link_to "Add new Article", new_article_path %>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Edit</th>
+    </tr>
+    <% @articles.each do |a| %>
+        <tr>
+            <td>
+                <%= link_to a.title, a%>
+            </td>
+            <td>
+                <%= link_to "Edit",  edit_article_path(a) %>
+            </td>
+        <td><%= link_to 'delete', article_path(a), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?' } %></td>
+        </tr>
+    <% end %>
+</table>

@@ -1,0 +1,27 @@
+<% if @article.errors.any? %>
+    <h2>These errors prevent you from performing the require task</h2>
+    <ul>
+        <%= @article.errors.full_messages.each do |e| %>
+            <li>
+                <%= e %>
+            </li>
+        <% end %>
+    </ul>
+<% end %>
+
+
+<%= form_for @article do |a| %>
+    <p>
+        <%= a.label :Title%><br>
+        <%= a.text_field :title%>
+    </p>
+    <p>
+        <%= a.label :Body%><br>
+        <%= a.text_area :body %>
+    </p>
+
+    <p>
+        <%= a.submit%>
+    </p>
+<% end %>
+<%= link_to "Go Back To Home Page", articles_path %> 
