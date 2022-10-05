@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+    https:basic_authenticate_with name: "irha", password: "123", expect: [:destroy]
     def new
         @comment=Comment.new
     end
