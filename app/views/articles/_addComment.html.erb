@@ -7,7 +7,15 @@
         <%= c.label :body %><br>
         <%= c.text_area :body %>
     </p>
-    <p>
+    
+
+    <div>
+  <%= c.label :status %><br>
+  <%= c.select :status, ['public', 'private', 'archived'], selected: 'public' %>
+</div>
+<br>
+<p>
         <%= c.submit %>
     </p>
+<br>
 <% end %>
